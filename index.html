@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HydroGlow | Premium Clean Shopify Theme</title>
+    <title>HydroGlow | Premium Skincare & Wellness Theme</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,6 +15,7 @@
             --text-dark: #333333;
             --text-light: #777777;
             --transition: all 0.4s ease;
+            --header-height: 70px;
         }
 
         * {
@@ -29,6 +30,7 @@
             color: var(--text-dark);
             overflow-x: hidden;
             line-height: 1.6;
+            padding-top: var(--header-height);
         }
 
         h1, h2, h3, h4 {
@@ -66,35 +68,53 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Header Styles */
+        /* Header Styles - Mobile Responsive */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 0;
+            padding: 15px 0;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             transition: var(--transition);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
 
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--dark-blue);
             text-decoration: none;
+            z-index: 1001;
         }
 
         .logo span {
             color: var(--accent-blue);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        nav {
+            transition: var(--transition);
         }
 
         nav ul {
@@ -103,7 +123,7 @@
         }
 
         nav li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         nav a {
@@ -132,7 +152,7 @@
 
         .cart-icon {
             position: relative;
-            margin-left: 30px;
+            margin-left: 25px;
             font-size: 20px;
             color: var(--text-dark);
         }
@@ -154,12 +174,12 @@
 
         /* Hero Section with Water Animation */
         .hero {
-            height: 100vh;
+            height: calc(100vh - var(--header-height));
+            min-height: 600px;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
         }
 
         .water-background {
@@ -210,11 +230,9 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.3s;
         }
 
         .hero p {
@@ -222,28 +240,21 @@
             margin-bottom: 30px;
             color: var(--text-light);
             max-width: 600px;
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.5s;
-        }
-
-        .hero .btn {
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.7s;
         }
 
         /* Featured Products */
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             display: inline-block;
             position: relative;
         }
@@ -254,15 +265,15 @@
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background-color: var(--light-blue);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
@@ -279,7 +290,7 @@
         }
 
         .product-image {
-            height: 300px;
+            height: 250px;
             background-color: #f9f9f9;
             position: relative;
             overflow: hidden;
@@ -302,7 +313,7 @@
         }
 
         .product-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 10px;
         }
 
@@ -319,13 +330,13 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .feature-card {
             text-align: center;
-            padding: 40px 20px;
+            padding: 35px 20px;
             background-color: var(--pure-white);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -338,9 +349,9 @@
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
             background-color: rgba(168, 216, 234, 0.2);
             border-radius: 50%;
             display: flex;
@@ -355,17 +366,18 @@
         }
 
         .feature-icon i {
-            font-size: 36px;
+            font-size: 30px;
             color: var(--dark-blue);
         }
 
         .feature-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
 
         .feature-text {
             color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         /* Testimonials */
@@ -387,7 +399,7 @@
 
         .testimonial-card {
             min-width: 100%;
-            padding: 40px;
+            padding: 30px;
             background-color: var(--pure-white);
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -405,7 +417,7 @@
         .testimonial-text {
             font-size: 1.1rem;
             font-style: italic;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--text-dark);
             position: relative;
         }
@@ -413,20 +425,20 @@
         .testimonial-text:before,
         .testimonial-text:after {
             content: '"';
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--light-blue);
             opacity: 0.3;
             position: absolute;
         }
 
         .testimonial-text:before {
-            top: -20px;
-            left: -20px;
+            top: -15px;
+            left: -15px;
         }
 
         .testimonial-text:after {
             bottom: -40px;
-            right: -20px;
+            right: -15px;
         }
 
         .testimonial-author {
@@ -436,8 +448,8 @@
         }
 
         .author-avatar {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 15px;
@@ -463,12 +475,12 @@
         .slider-nav {
             display: flex;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: #ddd;
             margin: 0 5px;
@@ -489,7 +501,7 @@
         .story-container {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 50px;
         }
 
         .story-image {
@@ -510,8 +522,8 @@
         }
 
         .story-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .story-content p {
@@ -523,12 +535,12 @@
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .category-card {
             position: relative;
-            height: 300px;
+            height: 280px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -550,13 +562,13 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 25px;
+            padding: 20px;
             background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
             color: var(--pure-white);
         }
 
         .category-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
@@ -566,6 +578,7 @@
             font-weight: 500;
             display: inline-flex;
             align-items: center;
+            font-size: 0.95rem;
         }
 
         .category-link i {
@@ -581,7 +594,7 @@
         .newsletter {
             background-color: #f9fbfd;
             text-align: center;
-            padding: 80px 0;
+            padding: 70px 0;
         }
 
         .newsletter-container {
@@ -590,13 +603,13 @@
         }
 
         .newsletter h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 20px;
         }
 
         .newsletter p {
             color: var(--text-light);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .newsletter-form {
@@ -607,7 +620,7 @@
 
         .newsletter-form input {
             flex: 1;
-            padding: 16px 20px;
+            padding: 15px 20px;
             border: 1px solid #ddd;
             border-radius: 50px 0 0 50px;
             font-family: 'Inter', sans-serif;
@@ -616,7 +629,7 @@
         }
 
         .newsletter-form button {
-            padding: 0 30px;
+            padding: 0 25px;
             background-color: var(--light-blue);
             color: var(--text-dark);
             border: none;
@@ -636,19 +649,19 @@
         /* Footer */
         footer {
             background-color: #f0f5f8;
-            padding: 70px 0 30px;
+            padding: 60px 0 25px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
         }
 
         .footer-logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--dark-blue);
             margin-bottom: 20px;
@@ -662,24 +675,26 @@
         .footer-about p {
             color: var(--text-light);
             margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background-color: var(--pure-white);
             border-radius: 50%;
             color: var(--text-dark);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 16px;
         }
 
         .social-links a:hover {
@@ -689,7 +704,7 @@
 
         .footer-heading {
             font-size: 1.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -699,7 +714,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 35px;
             height: 2px;
             background-color: var(--light-blue);
         }
@@ -709,13 +724,14 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
             text-decoration: none;
             color: var(--text-light);
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
@@ -725,8 +741,9 @@
 
         .footer-contact li {
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         .footer-contact i {
@@ -737,33 +754,53 @@
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(0,0,0,0.05);
             color: var(--text-light);
-            font-size: 14px;
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease-in-out;
+            padding-top: var(--header-height);
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .fade-in.appear {
-            opacity: 1;
+        .mobile-nav.active {
             transform: translateY(0);
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav li {
+            margin: 25px 0;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .mobile-nav a:hover {
+            color: var(--accent-blue);
         }
 
         /* Responsive Styles */
@@ -774,11 +811,20 @@
             
             .story-container {
                 flex-direction: column;
+                gap: 40px;
+            }
+            
+            .story-image, .story-content {
+                width: 100%;
             }
         }
 
         @media (max-width: 768px) {
-            nav ul {
+            .nav-toggle {
+                display: block;
+            }
+            
+            nav.desktop-nav {
                 display: none;
             }
             
@@ -786,12 +832,16 @@
                 font-size: 2.5rem;
             }
             
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
             .section {
                 padding: 70px 0;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .newsletter-form {
@@ -804,9 +854,17 @@
                 width: 100%;
                 border-radius: 50px;
             }
+            
+            .newsletter-form input {
+                border-radius: 50px;
+            }
+            
+            .newsletter-form button {
+                padding: 15px;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -815,8 +873,52 @@
                 font-size: 1rem;
             }
             
-            .featured-products .products-grid {
+            .products-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                padding: 25px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-heading {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 13px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .product-image {
+                height: 220px;
             }
         }
     </style>
@@ -826,7 +928,10 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">Hydro<span>Glow</span></a>
-            <nav>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Shop</a></li>
@@ -841,6 +946,17 @@
             </a>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -865,7 +981,7 @@
                 <h2>Featured Products</h2>
             </div>
             <div class="products-grid">
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1571781418606-70265b9cce90?auto=format&fit=crop&w=600" alt="Hydrating Serum">
                     </div>
@@ -874,7 +990,7 @@
                         <div class="product-price">₹2,499</div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1595425977377-6aaf06c6a478?auto=format&fit=crop&w=600" alt="Moisturizing Cream">
                     </div>
@@ -883,7 +999,7 @@
                         <div class="product-price">₹1,799</div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?auto=format&fit=crop&w=600" alt="Cleansing Gel">
                     </div>
@@ -892,7 +1008,7 @@
                         <div class="product-price">₹1,299</div>
                     </div>
                 </div>
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1611930022073-91b0b23d19a7?auto=format&fit=crop&w=600" alt="Night Cream">
                     </div>
@@ -912,26 +1028,26 @@
                 <h2>Why Choose Us</h2>
             </div>
             <div class="features-grid">
-                <div class="feature-card fade-in">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
                     <h3 class="feature-title">Natural Ingredients</h3>
-                    <p class="feature-text">Our products are formulated with 100% natural, sustainably sourced ingredients that are gentle on your skin and the planet.</p>
+                    <p class="feature-text">Our products are formulated with 100% natural, sustainably sourced ingredients.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3 class="feature-title">Science-Backed Formulas</h3>
-                    <p class="feature-text">Each product is developed by skincare scientists to deliver visible results without compromising on safety.</p>
+                    <p class="feature-text">Developed by skincare scientists to deliver visible results safely.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-recycle"></i>
                     </div>
                     <h3 class="feature-title">Eco-Friendly Packaging</h3>
-                    <p class="feature-text">We use recyclable and biodegradable materials to minimize our environmental footprint.</p>
+                    <p class="feature-text">Recyclable and biodegradable materials to minimize environmental impact.</p>
                 </div>
             </div>
         </div>
@@ -955,11 +1071,31 @@
                             <p class="author-title">Verified Customer</p>
                         </div>
                     </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">I've tried countless moisturizers, but nothing compares to HydroGlow. My skin has never felt so hydrated and healthy. Worth every penny!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200" alt="Raj M.">
+                            </div>
+                            <h4 class="author-name">Raj M.</h4>
+                            <p class="author-title">Verified Customer</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">The mineral cleansing gel is a game-changer! It leaves my skin feeling clean but never stripped. I've recommended it to all my friends.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200" alt="Priya S.">
+                            </div>
+                            <h4 class="author-name">Priya S.</h4>
+                            <p class="author-title">Verified Customer</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="slider-nav">
-                    <div class="slider-dot active"></div>
-                    <div class="slider-dot"></div>
-                    <div class="slider-dot"></div>
+                    <div class="slider-dot active" data-index="0"></div>
+                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dot" data-index="2"></div>
                 </div>
             </div>
         </div>
@@ -969,14 +1105,13 @@
     <section class="section story-section">
         <div class="container">
             <div class="story-container">
-                <div class="story-image fade-in">
+                <div class="story-image">
                     <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800" alt="Our Story">
                 </div>
-                <div class="story-content fade-in">
+                <div class="story-content">
                     <h2>Our Journey to Pure Hydration</h2>
                     <p>Founded in 2018 by skincare chemist Elena Rodriguez, HydroGlow began with a simple mission: to create water-based skincare that delivers unparalleled hydration without harmful additives.</p>
                     <p>After years of research in marine botanicals and hydrating compounds, we developed our proprietary AquaComplex™ technology that locks in moisture for 72 hours.</p>
-                    <p>Today, we remain committed to sustainable practices, ethical sourcing, and products that make a visible difference in your skin's health.</p>
                     <a href="#" class="btn">Learn Our Story</a>
                 </div>
             </div>
@@ -990,21 +1125,21 @@
                 <h2>Shop by Category</h2>
             </div>
             <div class="categories-grid">
-                <div class="category-card fade-in">
+                <div class="category-card">
                     <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?auto=format&fit=crop&w=600" alt="Cleansers">
                     <div class="category-overlay">
                         <h3 class="category-title">Cleansers</h3>
                         <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="category-card fade-in">
+                <div class="category-card">
                     <img src="https://images.unsplash.com/photo-1620916566398-39faa3d5a41d?auto=format&fit=crop&w=600" alt="Moisturizers">
                     <div class="category-overlay">
                         <h3 class="category-title">Moisturizers</h3>
                         <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="category-card fade-in">
+                <div class="category-card">
                     <img src="https://images.unsplash.com/photo-1571781418606-70265b9cce90?auto=format&fit=crop&w=600" alt="Serums">
                     <div class="category-overlay">
                         <h3 class="category-title">Serums</h3>
@@ -1018,7 +1153,7 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
-            <div class="newsletter-container fade-in">
+            <div class="newsletter-container">
                 <h2>Join Our Wellness Community</h2>
                 <p>Subscribe to receive exclusive offers, skincare tips, and early access to new products.</p>
                 <form class="newsletter-form">
@@ -1080,27 +1215,22 @@
     </footer>
 
     <script>
-        // Scroll animation
-        const fadeElements = document.querySelectorAll('.fade-in');
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileNav = document.getElementById('mobileNav');
         
-        const appearOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
+        navToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            navToggle.innerHTML = mobileNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
         
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('appear');
-                    appearOnScroll.unobserve(entry.target);
-                }
+        // Close mobile nav when clicking links
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
-        }, appearOptions);
-        
-        fadeElements.forEach(element => {
-            appearOnScroll.observe(element);
         });
         
         // Testimonial slider
@@ -1132,11 +1262,11 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.style.padding = '10px 0';
                 header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
             } else {
-                header.style.padding = '20px 0';
+                header.style.padding = '15px 0';
                 header.style.boxShadow = 'none';
             }
         });
